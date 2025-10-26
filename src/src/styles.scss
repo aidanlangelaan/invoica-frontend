@@ -1,1 +1,42 @@
+/* styles.scss (Tailwind v4 + Angular Material M3) */
+@use "@angular/material" as mat;
+@use "./styles/theme"; /* this file emits :root and :root.dark with @include mat.theme(...) */
 
+/* 1) Material core (once) */
+@include mat.core();
+
+/* 2) Tailwind v4 core (no config file needed) */
+@import "tailwindcss";
+
+/* 3) Bridge M3 system tokens -> Tailwind theme tokens via @theme */
+@theme {
+  /* brand roles */
+  --color-primary: var(--md-sys-color-primary);
+  --color-on-primary: var(--md-sys-color-on-primary);
+  --color-secondary: var(--md-sys-color-secondary);
+  --color-on-secondary: var(--md-sys-color-on-secondary);
+  --color-tertiary: var(--md-sys-color-tertiary);
+  --color-on-tertiary: var(--md-sys-color-on-tertiary);
+
+  /* surfaces & outline */
+  --color-surface: var(--md-sys-color-surface);
+  --color-surface-dim: var(--md-sys-color-surface-dim);
+  --color-surface-bright: var(--md-sys-color-surface-bright);
+  --color-surface-container: var(--md-sys-color-surface-container);
+  --color-surface-container-high: var(--md-sys-color-surface-container-high);
+  --color-surface-container-highest: var(--md-sys-color-surface-container-highest);
+  --color-on-surface: var(--md-sys-color-on-surface);
+  --color-outline: var(--md-sys-color-outline);
+  --color-outline-variant: var(--md-sys-color-outline-variant);
+
+  /* error */
+  --color-error: var(--md-sys-color-error);
+  --color-on-error: var(--md-sys-color-on-error);
+}
+
+/* 4) Your app styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 2rem;
+}

@@ -30,7 +30,7 @@
               }
             ],
             "styles": [
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles/tailwindcss-import.css",
               "src/styles.scss"
             ]
           },
@@ -95,7 +95,7 @@
               }
             ],
             "styles": [
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles/tailwindcss-import.css",
               "src/styles.scss"
             ]
           }
