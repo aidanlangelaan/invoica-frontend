@@ -1,24 +1,16 @@
-.app-container {
-  height: 100vh;
+.toolbar-spacer {
+  flex: 1 1 auto;
 }
 
-.app-sidenav {
-  width: 240px;
-}
+.search-field {
+  width: 256px;
+  margin-right: 16px;
 
-.app-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.app-content {
-  padding: 16px;
-}
-
-/* Responsive search bar */
-@media (max-width: 600px) {
-  .app-toolbar mat-form-field {
-    display: none; /* Hide on extra small screens */
+  @media (max-width: 599px) {
+    display: none;
   }
+}
+
+.theme-toggle {
+  margin-right: 16px;
 }

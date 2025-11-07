@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="welcome-layout-container" [ngClass]="isDarkTheme ? 'dark-background' : 'light-background'">
+  <div class="theme-toggle-container">
+    <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleTheme()">
+      <mat-icon>{{ isDarkTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>
+    </mat-slide-toggle>
+  </div>
+
+  <div class="welcome-content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

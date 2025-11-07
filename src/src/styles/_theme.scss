@@ -1,10 +1,8 @@
-/* _theme.scss */
-@use 'sass:map';
 @use '@angular/material' as mat;
-@use './_theme-colors' as colors; /* pas het pad aan naar waar jouw file staat */
+@use './_theme-colors' as colors;
 
-/* The generator exported $primary-palette and $tertiary-palette.
-   It did NOT export $secondary-palette, so we merge it here from the internal maps. */
+
+
 $primary-palette:          colors.$primary-palette;
 $secondary-palette:        colors.$secondary-palette;
 $tertiary-palette:         colors.$tertiary-palette;
@@ -12,8 +10,8 @@ $neutral-palette:          colors.$neutral-palette;
 $neutral-variant-palette:  colors.$neutral-variant-palette;
 $error-palette:            colors.$error-palette;
 
-:root {
-  color-scheme: light dark;
+html {
+  color-scheme: light;
 
   @include mat.theme((
     color: (
@@ -29,8 +27,8 @@ $error-palette:            colors.$error-palette;
   ));
 
   @include colors.high-contrast-overrides(color-scheme);
-}
 
-:root.dark {
-  color-scheme: dark;
+  &.dark {
+    color-scheme: dark;
+  }
 }

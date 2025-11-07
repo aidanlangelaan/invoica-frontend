@@ -17,17 +17,17 @@
       </button>
       <span>Invoica</span>
 
-      <span class="flex-auto"></span>
+      <span class="toolbar-spacer"></span>
 
       <!-- Search (collapses on XS/SM) -->
-      <mat-form-field appearance="outline" class="hidden sm:block w-64 mr-4">
+      <mat-form-field appearance="outline" class="search-field">
         <mat-label>Search</mat-label>
         <input matInput placeholder="Search...">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
 
       <!-- Theme Toggle -->
-      <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleTheme()" class="mr-4">
+      <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleTheme()" class="theme-toggle">
         <mat-icon>{{ isDarkTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>
       </mat-slide-toggle>
 

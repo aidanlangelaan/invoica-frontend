@@ -1,7 +1,13 @@
-<div class="container mx-auto text-center p-8">
-  <h1 class="text-4xl font-bold mb-4">Welcome to Invoica</h1>
-  <p class="text-lg mb-8">Please log in or register to continue.</p>
-  <div class="flex justify-center gap-4">
-    <button mat-raised-button color="primary" (click)="login()">Login</button>
+<mat-card class="welcome-card">
+  <div class="logo-container">
+    <img *ngIf="!isDarkTheme" src="assets/logo-light.png" alt="Invoica Logo" class="logo-img">
+    <img *ngIf="isDarkTheme" src="assets/logo-dark.png" alt="Invoica Logo" class="logo-img">
   </div>
-</div>
+
+  <mat-card-title class="welcome-title">Welcome to Invoica</mat-card-title>
+  <mat-card-subtitle class="welcome-subtitle">Sign in to your account</mat-card-subtitle>
+
+  <button mat-raised-button color="primary" (click)="login()" class="login-button">
+    Continue with Keycloak
+  </button>
+</mat-card>
