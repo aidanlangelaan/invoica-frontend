@@ -1,38 +1,46 @@
 import { Routes } from '@angular/router';
 import { WelcomeComponent } from './features/welcome/welcome';
 import { HomeComponent } from './features/home/home';
-import { authGuard } from './core/auth/auth.guard';
 import { WelcomeLayoutComponent } from './layout/welcome-layout/welcome-layout.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import { authGuard } from './core/auth/auth.guard'; // The refactored guard
 
 export const routes: Routes = [
   {
     path: '',
-    component: WelcomeLayoutComponent,
+    canMatch: [authGuard],
     children: [
       {
         path: '',
-        component: WelcomeComponent,
+        component: WelcomeLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: WelcomeComponent,
+          },
+        ],
       },
     ],
   },
   {
-    path: 'app',
+    path: 'home',
     component: AppLayoutComponent,
-    canActivate: [authGuard],
+    canMatch: [authGuard],
     children: [
-      {
-        path: 'dashboard',
-        component: HomeComponent,
-      },
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full',
-      },
+      { path: '', component: HomeComponent },
     ],
   },
-  // Redirect any other path to the welcome page
+  // Future protected routes will follow this pattern:
+  // { 
+  //   path: 'orders',
+  //   component: AppLayoutComponent,
+  //   canMatch: [authGuard],
+  //   children: [
+  //     { path: '', component: OrdersListComponent },
+  //     { path: ':id', component: OrderDetailComponent },
+  //     { path: ':id/edit', component: OrderEditComponent },
+  //   ],
+  // },
   {
     path: '**',
     redirectTo: '',

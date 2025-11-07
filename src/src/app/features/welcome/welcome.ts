@@ -12,15 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class WelcomeComponent {
   private authService = inject(AuthService);
-  private router = inject(Router);
-
-  constructor() {
-    effect(() => {
-      if (this.authService.isAuthenticated()) {
-        this.router.navigate(['/home']);
-      }
-    });
-  }
 
   public login(): void {
     this.authService.login();

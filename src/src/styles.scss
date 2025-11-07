@@ -1,12 +1,11 @@
 /* styles.scss (Tailwind v4 + Angular Material M3) */
 @use "@angular/material" as mat;
 @use "./styles/theme"; /* this file emits :root and :root.dark with @include mat.theme(...) */
+@use "tailwindcss";
 
 /* 1) Material core (once) */
 @include mat.core();
 
-/* 2) Tailwind v4 core (no config file needed) */
-@import "tailwindcss";
 
 /* 3) Bridge M3 system tokens -> Tailwind theme tokens via @theme */
 @theme {
